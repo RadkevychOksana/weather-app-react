@@ -22,13 +22,13 @@ export default function Weather(props){
                   <input
                     type="submit"
                     value="Search"
-                    className="btn btn-success w-100"
+                    className="btn btn-info w-100 text-white"
                   />
                 </div>
               </div>
             </form>
             <div className="overview">
-              <h1 id="city" className="fs-1 fw-bold text-success">
+              <h1 id="city" className="fs-1 fw-bold text-info">
                 London
               </h1>
               <ul>
