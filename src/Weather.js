@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedData";
 //import { Grid } from  'react-loader-spinner';
 import "bootstrap/dist/css/bootstrap.css";
 
 export default function Weather(props) {
-  const [weatherData,setWeatherData] = useState({ready: false});
+  const [weatherData, setWeatherData] = useState({ ready: false });
   function showTemp(response) {
     setWeatherData({
-      ready:true,
+      ready: true,
       temp: Math.round(response.data.main.temp),
       city: response.data.name,
       windSpeed: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      iconUrl:"https://st.depositphotos.com/1007168/1249/i/600/depositphotos_12492703-stock-photo-summer-hot-sun.jpg",
+      iconUrl:
+        "https://st.depositphotos.com/1007168/1249/i/600/depositphotos_12492703-stock-photo-summer-hot-sun.jpg",
       description: response.data.weather[0].description,
+      date: new Date(response.data.dt * 1000),
       pressure: response.data.main.pressure,
-      date: "Tuesday 10:00"
     });
   }
   if (weatherData.ready) {
@@ -49,7 +51,10 @@ export default function Weather(props) {
               </h1>
               <ul>
                 <li>
-                  Last updated: <span>{weatherData.date}</span>
+                  Last updated:{" "}
+                  <span>
+                    <FormattedDate date={weatherData.date} />
+                  </span>
                 </li>
                 <li className="text-capitalize">{weatherData.description}</li>
               </ul>
