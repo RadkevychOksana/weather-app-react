@@ -1,11 +1,15 @@
 import React from 'react';
-import './App.css';
+
 
 import  Weather  from './Weather';
+import Footer from './Footer';
 
 function App() {
   return (
-        <Weather defaultCity="London"/> 
+    <>
+    <Weather defaultCity="London"/>
+        <Footer/> 
+    </>       
   );
 }
 

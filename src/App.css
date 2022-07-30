@@ -27,7 +27,7 @@ li:first-letter {
   text-transform: capitalize;
 }
 
-.weather-app-wrapper {
+.weather-app-wrapper{
   max-width: 600px;
   margin: 30px auto;
 }
@@ -91,5 +91,4 @@ li:first-letter {
 .float-left{
   float:left;
 }
-
 
