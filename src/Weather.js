@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
-//import { Grid } from  'react-loader-spinner';
 import "bootstrap/dist/css/bootstrap.css";
 
 export default function Weather(props) {
@@ -14,8 +13,7 @@ export default function Weather(props) {
       city: response.data.name,
       windSpeed: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      iconUrl:
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon:response.data.weather[0].icon,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
       pressure: response.data.main.pressure,
@@ -49,7 +47,7 @@ setCity(event.target.value);
                   <input
                     type="search"
                     placeholder="Type a city.."
-                    className="form-control"
+                    className="form-control text-secondary"
                     id="city-input"
                     autocomplete="off"
                     onChange={handleCityChange}
