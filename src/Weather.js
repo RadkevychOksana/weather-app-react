@@ -18,6 +18,7 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
       pressure: response.data.main.pressure,
+      coord: response.data.coord
     });
   }
 
@@ -64,7 +65,7 @@ setCity(event.target.value);
               </div>
             </form>
             <WeatherInfo data={weatherData}/>
-            <WeatherForcast/>
+            <WeatherForcast coord={weatherData.coord}/>
           </div>
         </div>
       </div>
