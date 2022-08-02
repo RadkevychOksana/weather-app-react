@@ -15,7 +15,6 @@ export default function WeatherForcast(props) {
         setForecast(response.data.daily);
         setLoaded(true);
     }
-    
 if(loaded){
     return (
         <div className="WeatherForcast">
@@ -39,6 +38,5 @@ if(loaded){
     let lon = props.coord.lat;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
-    return null;
 }
 }
